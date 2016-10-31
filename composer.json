@@ -1,4 +1,8 @@
 {
     "name": "tomaszsita/wp-manual-image-crop",
-    "description": "Manual Image Crop"
+    "description": "Manual Image Crop",
+    "type": "wordpress-plugin",
+    "require": {
+        "composer/installers": "dev-master"
+    }
 }
