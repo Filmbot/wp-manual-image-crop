@@ -3,6 +3,6 @@
     "description": "Manual Image Crop",
     "type": "wordpress-plugin",
     "require": {
-        "composer/installers": "dev-master"
+		"composer/installers": "~1.0"
     }
 }
