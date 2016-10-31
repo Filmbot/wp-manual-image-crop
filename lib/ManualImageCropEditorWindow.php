@@ -102,8 +102,18 @@ class ManualImageCropEditorWindow {
 			echo json_encode (array('status' => 'error', 'message' => 'wrong attachement' ) );
 			exit;
 		}
-		$src_file = str_replace($uploadsDir['baseurl'], $uploadsDir['basedir'], $src_file_url[0]);
-		$sizes = getimagesize($src_file);
+		if ( ! $src_file_url[1] || ! $src_file_url[2] )
+		{
+			$src_file = str_replace($uploadsDir['baseurl'], $uploadsDir['basedir'], $src_file_url[0]);
+			$sizes = getimagesize($src_file_url[0]);
+		}
+		else
+		{
+			$sizes = [
+				$src_file_url[1],
+				$src_file_url[2],
+			];
+		}
 
 		$original[0] = $sizes[0];
 		$original[1] = $sizes[1];
