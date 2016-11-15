@@ -52,6 +52,9 @@ Please contact me if you want to add a translation (or submit a pull request on 
 *   When the plugin has been installed, Click 'Activate' 
 
 == Changelog ==
+= 1.12.1 =
+* Better handling of undersized images
+
 = 1.12 =
 * Fixed 'streched images' issue
 
