@@ -35,10 +35,10 @@ class ManualImageCropEditorWindow {
 		global $_wp_additional_image_sizes;
 
 		$imageSizes = get_intermediate_image_sizes();
-
-		$editedSize = in_array($_GET['size'], $imageSizes) ? $_GET['size'] : null;
-			
-		$postId = filter_var($_GET['postId'], FILTER_SANITIZE_NUMBER_INT);
+		$size = $_GET['size'] ?? null;
+		$editedSize = $size && in_array($size, $imageSizes) ? $size : null;
+		$postId = $_GET['postId'] ?? null;
+		$postId = filter_var($postId, FILTER_SANITIZE_NUMBER_INT);
 		
 		$sizeLabels = apply_filters( 'image_size_names_choose', array(
 				'thumbnail' => __('Thumbnail'),
