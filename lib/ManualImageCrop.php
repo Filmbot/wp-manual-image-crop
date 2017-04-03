@@ -195,8 +195,6 @@ class ManualImageCrop {
 		
 		$data = $this->filterPostData();
 
-		$imageMetadata = wp_get_attachment_metadata($data['attachmentId']);
-
 		if ( self::as3cf_enabled() ) {
 			add_filter( 'as3cf_get_attached_file_copy_back_to_local', array( $this, 'get_attached_file_copy_back_to_local' ), 10, 3 );
 			
@@ -293,6 +291,8 @@ class ManualImageCrop {
 			$src_x = $src_x / $scale;
 			$src_y = $src_y / $scale;
 		}
+
+		$imageMetadata = wp_get_attachment_metadata($data['attachmentId']);
 
 		//saves the selected area
 		$imageMetadata['micSelectedArea'][$data['editedSize']] = array(
